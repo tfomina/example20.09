@@ -16,10 +16,10 @@ app.get('/list', (req, res) => {
 
     const { count } = req.query;
 
-    const data = getData(data, count);
+    const w = getData(data, count);
 
 
-    res.send(data);
+    res.send(w);
 });
 
 app.listen(3000, () => console.log('port 3000'));

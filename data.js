@@ -11,4 +11,6 @@ const data = [
     { todo: '10 todo' },
 ];
 
+const usersData = [];
+
 module.exports = { data };
