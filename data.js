@@ -11,6 +11,6 @@ const data = [
     { todo: '10 todo' },
 ];
 
-const usersData = [];
+// TODO массив users здесь экспортим его
 
 module.exports = { data };
