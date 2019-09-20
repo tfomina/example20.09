@@ -35,6 +35,7 @@ class App extends Component {
             <div>
                 <h3>ddd</h3>
                 <List list={list}/>
+                {/*TODO рендер компонента здесь*/}
             </div>
         );
     }
