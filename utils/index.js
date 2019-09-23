@@ -3,9 +3,11 @@ const getData = (data, count) => {
 };
 
 const getUsers = (users, firstName) => {
-  return users.filter(user =>
-    user.firstName.toLowerCase().includes(firstName.toLowerCase())
-  );
+  return firstName
+    ? users.filter(user =>
+        user.firstName.toLowerCase().includes(firstName.toLowerCase())
+      )
+    : users;
 };
 
 module.exports = {

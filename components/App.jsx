@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import List from "./List";
-import UsersList from "./UsersList";
+import Users from "./Users";
 
 import { getList } from "../sources/list";
 
@@ -38,7 +38,7 @@ class App extends Component {
         <h3>Список</h3>
         <List list={list} />
         <h3>Список пользователей</h3>
-        <UsersList />
+        <Users />
       </div>
     );
   }

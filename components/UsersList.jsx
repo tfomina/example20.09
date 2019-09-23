@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { getUsers } from "../sources/users";
 
-const TEST_NAME = "ТАТЬЯНА";
-
 class UsersList extends Component {
   constructor(props) {
     super(props);
@@ -13,9 +11,16 @@ class UsersList extends Component {
   }
 
   componentDidMount() {
-    getUsers({ firstName: TEST_NAME }).then(({ data }) =>
-      this.setState({ users: data })
-    );
+    this.updateUsers();
+  }
+
+  componentDidUpdate() {
+    this.updateUsers();
+  }
+
+  updateUsers() {
+    const { firstName } = this.props;
+    getUsers({ firstName }).then(({ data }) => this.setState({ users: data }));
   }
 
   render() {
@@ -29,7 +34,7 @@ class UsersList extends Component {
             ))}
           </ul>
         ) : (
-          "Нет данных"
+          <div style={{ paddingTop: "20px" }}>Нет данных</div>
         )}
       </>
     );
