@@ -1,9 +1,14 @@
 const getData = (data, count) => {
-   return data.slice(0, count);
+  return data.slice(0, count);
 };
 
-// TODO функция c двумя параметрами getUsers(data, firstName)
+const getUsers = (users, firstName) => {
+  return users.filter(user =>
+    user.firstName.toLowerCase().includes(firstName.toLowerCase())
+  );
+};
 
 module.exports = {
-    getData
+  getData,
+  getUsers
 };

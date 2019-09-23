@@ -1,7 +1,7 @@
 const { join } = require("path");
 const express = require("express");
-const { getData } = require("./utils");
-const { data } = require("./data.js");
+const { getData, getUsers } = require("./utils");
+const { data, users } = require("./data.js");
 
 const app = express();
 
@@ -21,6 +21,10 @@ app.get("/list", (req, res) => {
   res.send(result);
 });
 
-// TODO метод обработки запроса здесь
+app.get("/users", (req, res) => {
+  const { firstName } = req.query;
+  const result = getUsers(users, firstName);
+  res.send(result);
+});
 
 app.listen(3000, () => console.log("port 3000"));

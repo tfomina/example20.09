@@ -23,7 +23,7 @@ class App extends Component {
     // const { count } = this.state;
 
     // const params = { count };
-    console.log("PROMISE: ", getList());
+    // console.log("PROMISE: ", getList());
 
     getList({ count: this.state.count }).then(({ data }) =>
       this.setState({ list: data })
